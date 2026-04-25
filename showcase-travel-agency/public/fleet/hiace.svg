@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#d1d5db"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="120" y="320" width="960" height="230" rx="38" fill="#0f172a"/>
+  <rect x="200" y="230" width="520" height="120" rx="25" fill="#334155"/>
+  <circle cx="320" cy="590" r="72" fill="#020617"/>
+  <circle cx="900" cy="590" r="72" fill="#020617"/>
+  <text x="600" y="700" text-anchor="middle" font-size="56" font-family="Arial, sans-serif" fill="#111827">Hiace</text>
+</svg>

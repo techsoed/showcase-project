@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="190" y="350" width="820" height="190" rx="40" fill="#111827"/>
+  <rect x="320" y="250" width="460" height="130" rx="30" fill="#374151"/>
+  <circle cx="360" cy="575" r="70" fill="#030712"/>
+  <circle cx="850" cy="575" r="70" fill="#030712"/>
+  <text x="600" y="690" text-anchor="middle" font-size="56" font-family="Arial, sans-serif" fill="#111827">Innova</text>
+</svg>
