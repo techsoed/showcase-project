@@ -97,8 +97,8 @@ export const siteConfigId = {
     tagline: "Travel Antar Kota Tepat Waktu",
     description:
       "Layanan travel antar kota dengan armada terawat, driver profesional, dan jadwal fleksibel.",
-    whatsappNumber: "6281234567890",
-    phone: "+62 812-3456-7890",
+    whatsappNumber: "6285869236023",
+    phone: "+62 858-6923-6023",
     email: "hello@nusatransit.id",
     address: "Jl. Gatot Subroto No. 88, Jakarta",
     socials: [
@@ -247,8 +247,8 @@ export const siteConfigEn = {
     tagline: "Punctual Intercity Travel",
     description:
       "Intercity travel service with well-maintained fleets, professional drivers, and flexible schedules.",
-    whatsappNumber: "6281234567890",
-    phone: "+62 812-3456-7890",
+    whatsappNumber: "6285869236023",
+    phone: "+62 858-6923-6023",
     email: "hello@nusatransit.id",
     address: "Jl. Gatot Subroto No. 88, Jakarta",
     socials: [
