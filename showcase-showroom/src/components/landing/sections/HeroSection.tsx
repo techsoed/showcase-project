@@ -110,7 +110,7 @@ export default function HeroSection({ config, whatsappHref, locale }: LandingSec
           className="w-full lg:max-w-xl animate-[slideUp_700ms_ease-out]"
           style={{ transform: `translateY(${parallaxOffset}px)` }}
         >
-          <div className="relative h-[260px] w-full sm:h-[340px] lg:h-[410px] animate-[floatGentle_8s_ease-in-out_infinite]">
+          <div className="relative h-[180px] w-full sm:h-[280px] lg:h-[380px] animate-[floatGentle_8s_ease-in-out_infinite]">
             {heroCars.map((car, index) => {
               const isActive = index === activeIndex;
 
