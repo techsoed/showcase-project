@@ -80,43 +80,16 @@ export default function HeroSection({ config, whatsappHref, locale }: LandingSec
 
   return (
     <section id="home" className="relative overflow-hidden bg-white px-4 pb-14 pt-2 sm:px-6 lg:px-8 lg:pb-20 lg:pt-4">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 py-0 md:py-2 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-2xl animate-[fadeIn_700ms_ease-out]">
-          <p className="mb-1.5 inline-flex rounded-full border border-black/10 bg-[var(--wl-silver)] px-3 py-1 text-base font-semibold">
-            {config.brand.name}
-          </p>
-          <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            {heroCopy.headline}
-          </h1>
-          <p className="mt-4 max-w-xl text-base leading-7 text-black/70 sm:text-lg">
-            {heroCopy.subheadline}
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#katalog"
-              className="pressable inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--wl-black)] px-6 text-base font-semibold text-white transition hover:opacity-90"
-            >
-              {heroCopy.primaryAction}
-            </a>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="pressable inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-white px-6 text-base font-semibold text-[var(--wl-black)] transition hover:bg-black/5"
-            >
-              {heroCopy.secondaryAction}
-            </a>
-          </div>
-        </div>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 py-0 md:py-2 lg:flex-row lg:items-center lg:justify-between">
 
+        {/* Car image — shown FIRST on mobile (order-first), moves to right on desktop */}
         <div
-          className="w-full lg:max-w-xl animate-[slideUp_700ms_ease-out]"
+          className="w-full lg:order-last lg:max-w-xl animate-[slideUp_700ms_ease-out]"
           style={{ transform: `translateY(${parallaxOffset}px)` }}
         >
-          <div className="relative h-[260px] w-full sm:h-[340px] lg:h-[410px] animate-[floatGentle_8s_ease-in-out_infinite]">
+          <div className="relative h-[220px] w-full sm:h-[300px] lg:h-[410px] animate-[floatGentle_8s_ease-in-out_infinite]">
             {heroCars.map((car, index) => {
               const isActive = index === activeIndex;
-
               return (
                 <div
                   key={car.image}
@@ -158,6 +131,36 @@ export default function HeroSection({ config, whatsappHref, locale }: LandingSec
             </div>
           </div>
         </div>
+
+        {/* Text content — shown BELOW image on mobile, moves to left on desktop */}
+        <div className="max-w-2xl animate-[fadeIn_700ms_ease-out] lg:order-first">
+          <p className="mb-1.5 inline-flex rounded-full border border-black/10 bg-[var(--wl-silver)] px-3 py-1 text-base font-semibold">
+            {config.brand.name}
+          </p>
+          <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            {heroCopy.headline}
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-7 text-black/70 sm:text-lg">
+            {heroCopy.subheadline}
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#katalog"
+              className="pressable inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--wl-black)] px-6 text-base font-semibold text-white transition hover:opacity-90"
+            >
+              {heroCopy.primaryAction}
+            </a>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              className="pressable inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-white px-6 text-base font-semibold text-[var(--wl-black)] transition hover:bg-black/5"
+            >
+              {heroCopy.secondaryAction}
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   );
