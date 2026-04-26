@@ -77,7 +77,7 @@ export function HeroSection({ brand, hero }: HeroSectionProps) {
                   alt="Armada Hiace"
                   width={800}
                   height={600}
-                  className="h-auto w-full max-w-[85%] object-contain mix-blend-multiply"
+                  className="h-auto w-full max-w-[28%] object-contain mix-blend-multiply"
                 />
               </div>
               
@@ -88,7 +88,7 @@ export function HeroSection({ brand, hero }: HeroSectionProps) {
                   alt="Armada Innova"
                   width={800}
                   height={600}
-                  className="h-auto w-full max-w-[85%] object-contain mix-blend-multiply"
+                  className="h-auto w-full max-w-[28%] object-contain mix-blend-multiply"
                 />
               </div>
 
@@ -99,7 +99,7 @@ export function HeroSection({ brand, hero }: HeroSectionProps) {
                   alt="Armada Avanza"
                   width={1200}
                   height={900}
-                  className="h-auto w-full max-w-[85%] object-contain mix-blend-multiply drop-shadow-xl"
+                  className="h-auto w-full max-w-[28%] object-contain mix-blend-multiply drop-shadow-xl"
                   priority
                 />
               </div>

@@ -126,7 +126,7 @@ export function CapsuleNavbar({ brand, lang = "id", setLang }: CapsuleNavbarProp
 
           <div className="flex items-center gap-2">
             {setLang && (
-              <div className="hidden sm:flex items-center gap-0.5 rounded-full border border-zinc-200 bg-white p-0.5 shadow-sm">
+              <div className="flex items-center gap-0.5 rounded-full border border-zinc-200 bg-white p-0.5 shadow-sm">
                 <button
                   onClick={() => setLang("id")}
                   className={`h-9 w-9 rounded-full text-xs font-bold transition-all ${
