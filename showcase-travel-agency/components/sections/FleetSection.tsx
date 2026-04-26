@@ -6,16 +6,17 @@ import { FleetItem } from "@/lib/site-config";
 
 type FleetSectionProps = {
   fleet: FleetItem[];
+  lang?: "id" | "en";
 };
 
-export function FleetSection({ fleet }: FleetSectionProps) {
+export function FleetSection({ fleet, lang = "id" }: FleetSectionProps) {
   return (
     <section id="fleet" className="border-b border-[var(--border-soft)] bg-[var(--bg-soft)]">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <SectionTitle
-          eyebrow="Armada"
-          title="Pilih Armada Sesuai Kebutuhan Perjalanan"
-          description="Setiap kendaraan dirawat rutin agar perjalanan tetap aman dan nyaman."
+          eyebrow={lang === "en" ? "Fleet" : "Armada"}
+          title={lang === "en" ? "Choose Fleet For Your Needs" : "Pilih Armada Sesuai Kebutuhan Perjalanan"}
+          description={lang === "en" ? "Every vehicle is regularly maintained for your safety and comfort." : "Setiap kendaraan dirawat rutin agar perjalanan tetap aman dan nyaman."}
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -37,13 +38,16 @@ export function FleetSection({ fleet }: FleetSectionProps) {
                     {vehicle.tag}
                   </span>
                   <h3 className="mt-4 text-2xl font-semibold text-[var(--text-main)]">{vehicle.name}</h3>
-                  <p className="mt-2 text-base text-zinc-700">Kapasitas: {vehicle.capacity}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-600 border-l-2 border-zinc-200 pl-3 italic">
+                    {vehicle.routeDescription}
+                  </p>
+                  <p className="mt-4 text-base text-zinc-700">{lang === "en" ? "Capacity" : "Kapasitas"}: {vehicle.capacity}</p>
                   <p className="mt-1 text-base font-semibold text-zinc-900">{vehicle.startingPrice}</p>
                   <button
                     type="button"
-                    className="mt-5 inline-flex h-11 items-center justify-center rounded-xl bg-[var(--accent-main)] px-5 text-base font-semibold text-white transition hover:opacity-90"
+                    className="mt-5 inline-flex w-full h-11 items-center justify-center rounded-xl bg-[var(--text-main)] px-5 text-base font-semibold text-[var(--bg-main)] transition hover:opacity-90"
                   >
-                    Pilih Armada
+                    {lang === "en" ? "Select Fleet" : "Pilih Armada"}
                   </button>
                 </div>
               </article>

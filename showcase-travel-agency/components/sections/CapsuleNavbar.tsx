@@ -74,10 +74,6 @@ export function CapsuleNavbar({ brand, lang = "id", setLang }: CapsuleNavbarProp
         }
 
         visibleEntries.sort((a, b) => {
-          if (b.intersectionRatio !== a.intersectionRatio) {
-            return b.intersectionRatio - a.intersectionRatio;
-          }
-
           return Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top);
         });
 
@@ -85,8 +81,8 @@ export function CapsuleNavbar({ brand, lang = "id", setLang }: CapsuleNavbarProp
       },
       {
         root: null,
-        threshold: [0.15, 0.3, 0.45, 0.6],
-        rootMargin: "-22% 0px -58% 0px",
+        threshold: 0,
+        rootMargin: "-100px 0px -50% 0px",
       },
     );
 

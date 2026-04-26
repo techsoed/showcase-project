@@ -7,9 +7,10 @@ type FinalCtaSectionProps = {
     buttonLabel: string;
   };
   brand: BrandConfig;
+  lang?: "id" | "en";
 };
 
-export function FinalCtaSection({ cta, brand }: FinalCtaSectionProps) {
+export function FinalCtaSection({ cta, brand, lang = "id" }: FinalCtaSectionProps) {
   const waUrl = `https://wa.me/${brand.whatsappNumber}`;
 
   return (

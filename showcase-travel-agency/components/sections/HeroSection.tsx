@@ -22,9 +22,9 @@ export function HeroSection({ brand, hero }: HeroSectionProps) {
   }, []);
 
   const positions = [
-    "-bottom-8 right-[-10%] w-[85%] z-30 opacity-100", // 0: Front
-    "top-1/4 left-0 w-3/5 z-20 opacity-80 -translate-x-4", // 1: Back Left
-    "top-0 right-0 w-3/5 z-10 opacity-60 translate-x-4 -translate-y-4", // 2: Back Right
+    "z-30 opacity-100 translate-y-[20%] sm:translate-y-[15%] translate-x-[5%] scale-100", // 0: Front
+    "z-20 opacity-80 -translate-y-[5%] sm:-translate-y-[10%] -translate-x-[20%] scale-75", // 1: Back Left
+    "z-10 opacity-60 -translate-y-[25%] sm:-translate-y-[30%] translate-x-[20%] scale-[0.65]", // 2: Back Right
   ];
 
   const getPositionClass = (carIndex: number) => {
@@ -40,7 +40,7 @@ export function HeroSection({ brand, hero }: HeroSectionProps) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,#e5e7eb_0%,transparent_45%),radial-gradient(circle_at_bottom_left,#f3f4f6_0%,transparent_38%)]" />
       <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8 lg:pb-20 lg:pt-32">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
+          <div className="order-2 lg:order-1">
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[var(--text-main)] sm:text-5xl lg:text-6xl">
               {hero.heading}
             </h1>
@@ -66,40 +66,40 @@ export function HeroSection({ brand, hero }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className="relative w-full">
+          <div className="relative w-full order-1 lg:order-2">
             <div className="absolute -inset-x-8 -inset-y-10 bg-[radial-gradient(circle,_rgba(209,213,219,0.5)_0%,_rgba(255,255,255,0)_70%)]" />
-            <div className="relative mx-auto w-full max-w-xl h-[280px] sm:h-[350px] lg:h-[400px] mt-8 lg:mt-0">
+            <div className="relative mx-auto w-full max-w-xl h-[280px] sm:h-[350px] lg:h-[400px] mt-2 lg:mt-0">
               
               {/* Hiace (Index 2) */}
-              <div className={`absolute transition-all duration-1000 ease-in-out ${getPositionClass(2)}`}>
+              <div className={`absolute inset-0 flex items-center justify-center transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${getPositionClass(2)}`}>
                 <Image
                   src="/images/hiace.png"
                   alt="Armada Hiace"
                   width={800}
                   height={600}
-                  className="h-auto w-full object-contain mix-blend-multiply"
+                  className="h-auto w-full max-w-[85%] object-contain mix-blend-multiply"
                 />
               </div>
               
               {/* Innova (Index 1) */}
-              <div className={`absolute transition-all duration-1000 ease-in-out ${getPositionClass(1)}`}>
+              <div className={`absolute inset-0 flex items-center justify-center transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${getPositionClass(1)}`}>
                 <Image
                   src="/images/innova.png"
                   alt="Armada Innova"
                   width={800}
                   height={600}
-                  className="h-auto w-full object-contain mix-blend-multiply"
+                  className="h-auto w-full max-w-[85%] object-contain mix-blend-multiply"
                 />
               </div>
 
               {/* Avanza (Index 0) */}
-              <div className={`absolute transition-all duration-1000 ease-in-out ${getPositionClass(0)}`}>
+              <div className={`absolute inset-0 flex items-center justify-center transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${getPositionClass(0)}`}>
                 <Image
                   src="/images/avanza.png"
                   alt="Armada Avanza"
                   width={1200}
                   height={900}
-                  className="h-auto w-full object-contain mix-blend-multiply"
+                  className="h-auto w-full max-w-[85%] object-contain mix-blend-multiply drop-shadow-xl"
                   priority
                 />
               </div>

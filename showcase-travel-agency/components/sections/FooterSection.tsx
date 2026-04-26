@@ -2,9 +2,10 @@ import { BrandConfig } from "@/lib/site-config";
 
 type FooterSectionProps = {
   brand: BrandConfig;
+  lang?: "id" | "en";
 };
 
-export function FooterSection({ brand }: FooterSectionProps) {
+export function FooterSection({ brand, lang = "id" }: FooterSectionProps) {
   return (
     <footer className="bg-[var(--bg-soft)]">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
@@ -15,14 +16,14 @@ export function FooterSection({ brand }: FooterSectionProps) {
           </div>
 
           <div>
-            <p className="text-lg font-semibold text-zinc-900">Kontak</p>
-            <p className="mt-3 text-base text-zinc-700">Telp: {brand.phone}</p>
+            <p className="text-lg font-semibold text-zinc-900">{lang === "en" ? "Contact" : "Kontak"}</p>
+            <p className="mt-3 text-base text-zinc-700">{lang === "en" ? "Phone" : "Telp"}: {brand.phone}</p>
             <p className="mt-2 text-base text-zinc-700">Email: {brand.email}</p>
-            <p className="mt-2 text-base text-zinc-700">Alamat: {brand.address}</p>
+            <p className="mt-2 text-base text-zinc-700">{lang === "en" ? "Address" : "Alamat"}: {brand.address}</p>
           </div>
 
           <div>
-            <p className="text-lg font-semibold text-zinc-900">Sosial Media</p>
+            <p className="text-lg font-semibold text-zinc-900">{lang === "en" ? "Social Media" : "Sosial Media"}</p>
             <div className="mt-3 flex flex-wrap gap-3">
               {brand.socials.map((social) => (
                 <a
@@ -41,7 +42,7 @@ export function FooterSection({ brand }: FooterSectionProps) {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-zinc-300 pt-8 sm:flex-row">
           <div className="flex flex-col items-center gap-3 sm:items-start">
-            <p className="text-sm font-semibold text-zinc-900">Metode Pembayaran</p>
+            <p className="text-sm font-semibold text-zinc-900">{lang === "en" ? "Payment Methods" : "Metode Pembayaran"}</p>
             <div className="flex gap-2">
               <span className="inline-flex h-8 items-center justify-center rounded border border-zinc-300 bg-white px-3 text-xs font-bold text-zinc-800">BCA</span>
               <span className="inline-flex h-8 items-center justify-center rounded border border-zinc-300 bg-white px-3 text-xs font-bold text-zinc-800">MANDIRI</span>

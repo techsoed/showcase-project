@@ -34,6 +34,7 @@ export type TrustStat = {
 export type RouteItem = {
   from: string;
   to: string;
+  schedules: string[];
 };
 
 export type FleetItem = {
@@ -42,6 +43,7 @@ export type FleetItem = {
   startingPrice: string;
   tag: string;
   image: string;
+  routeDescription: string;
 };
 
 export type AdvantageItem = {
@@ -119,34 +121,37 @@ export const siteConfigId = {
     { label: "Ketepatan Waktu", value: "98%", icon: "clock" },
   ] satisfies TrustStat[],
   popularRoutes: [
-    { from: "Jakarta", to: "Bandung" },
-    { from: "Bandung", to: "Yogyakarta" },
-    { from: "Surabaya", to: "Malang" },
-    { from: "Semarang", to: "Solo" },
-    { from: "Jakarta", to: "Cirebon" },
-    { from: "Yogyakarta", to: "Solo" },
+    { from: "Jakarta", to: "Bandung", schedules: ["05:00", "10:00", "15:00", "20:00"] },
+    { from: "Bandung", to: "Yogyakarta", schedules: ["16:00", "19:00"] },
+    { from: "Surabaya", to: "Malang", schedules: ["06:00", "09:00", "13:00", "17:00"] },
+    { from: "Semarang", to: "Solo", schedules: ["07:00", "11:00", "15:00"] },
+    { from: "Jakarta", to: "Cirebon", schedules: ["08:00", "14:00", "20:00"] },
+    { from: "Yogyakarta", to: "Solo", schedules: ["06:00", "12:00", "18:00"] },
   ] satisfies RouteItem[],
   fleet: [
     {
       name: "Toyota Avanza",
-      capacity: "4-5 penumpang",
-      startingPrice: "Mulai Rp120.000",
-      tag: "Hemat",
       image: "/images/avanza.png",
+      capacity: "5 Penumpang",
+      startingPrice: "Rp 150.000 / kursi",
+      tag: "Ekonomis",
+      routeDescription: "Melayani rute jarak pendek (Semarang - Solo, Yogya - Solo) di semua jadwal.",
     },
     {
-      name: "Toyota Innova",
-      capacity: "5-6 penumpang",
-      startingPrice: "Mulai Rp180.000",
-      tag: "Nyaman",
+      name: "Innova Reborn",
       image: "/images/innova.png",
+      capacity: "7 Penumpang",
+      startingPrice: "Rp 250.000 / kursi",
+      tag: "Premium",
+      routeDescription: "Khusus rute bisnis (Jakarta - Bandung, Surabaya - Malang) jadwal pagi & sore.",
     },
     {
-      name: "Toyota Hiace",
-      capacity: "10-12 penumpang",
-      startingPrice: "Mulai Rp300.000",
-      tag: "Rombongan",
+      name: "Hiace Commuter",
       image: "/images/hiace.png",
+      capacity: "14 Penumpang",
+      startingPrice: "Rp 200.000 / kursi",
+      tag: "Rombongan",
+      routeDescription: "Tersedia untuk semua rute antar provinsi dengan jadwal keberangkatan malam.",
     },
   ] satisfies FleetItem[],
   advantages: [
@@ -266,34 +271,37 @@ export const siteConfigEn = {
     { label: "On-Time Rate", value: "98%", icon: "clock" },
   ] satisfies TrustStat[],
   popularRoutes: [
-    { from: "Jakarta", to: "Bandung" },
-    { from: "Bandung", to: "Yogyakarta" },
-    { from: "Surabaya", to: "Malang" },
-    { from: "Semarang", to: "Solo" },
-    { from: "Jakarta", to: "Cirebon" },
-    { from: "Yogyakarta", to: "Solo" },
+    { from: "Jakarta", to: "Bandung", schedules: ["05:00", "10:00", "15:00", "20:00"] },
+    { from: "Bandung", to: "Yogyakarta", schedules: ["16:00", "19:00"] },
+    { from: "Surabaya", to: "Malang", schedules: ["06:00", "09:00", "13:00", "17:00"] },
+    { from: "Semarang", to: "Solo", schedules: ["07:00", "11:00", "15:00"] },
+    { from: "Jakarta", to: "Cirebon", schedules: ["08:00", "14:00", "20:00"] },
+    { from: "Yogyakarta", to: "Solo", schedules: ["06:00", "12:00", "18:00"] },
   ] satisfies RouteItem[],
   fleet: [
     {
       name: "Toyota Avanza",
-      capacity: "4-5 passengers",
-      startingPrice: "From Rp120,000",
-      tag: "Economy",
       image: "/images/avanza.png",
+      capacity: "5 Passengers",
+      startingPrice: "Rp 150.000 / seat",
+      tag: "Economy",
+      routeDescription: "Serves short-distance routes (Semarang - Solo, Yogya - Solo) at all schedules.",
     },
     {
-      name: "Toyota Innova",
-      capacity: "5-6 passengers",
-      startingPrice: "From Rp180,000",
-      tag: "Comfort",
+      name: "Innova Reborn",
       image: "/images/innova.png",
+      capacity: "7 Passengers",
+      startingPrice: "Rp 250.000 / seat",
+      tag: "Premium",
+      routeDescription: "Exclusive for business routes (Jakarta - Bandung, Surabaya - Malang) morning & evening.",
     },
     {
-      name: "Toyota Hiace",
-      capacity: "10-12 passengers",
-      startingPrice: "From Rp300,000",
-      tag: "Group",
+      name: "Hiace Commuter",
       image: "/images/hiace.png",
+      capacity: "14 Passengers",
+      startingPrice: "Rp 200.000 / seat",
+      tag: "Group",
+      routeDescription: "Available for all inter-provincial routes with night departure schedules.",
     },
   ] satisfies FleetItem[],
   advantages: [

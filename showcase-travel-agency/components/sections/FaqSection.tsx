@@ -4,16 +4,17 @@ import { FaqItem } from "@/lib/site-config";
 
 type FaqSectionProps = {
   faqs: FaqItem[];
+  lang?: "id" | "en";
 };
 
-export function FaqSection({ faqs }: FaqSectionProps) {
+export function FaqSection({ faqs, lang = "id" }: FaqSectionProps) {
   return (
     <section id="faq" className="border-b border-[var(--border-soft)] bg-white">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <SectionTitle
           eyebrow="FAQ"
-          title="Pertanyaan yang Sering Diajukan"
-          description="Jawaban cepat untuk pertanyaan yang paling sering ditanyakan oleh pelanggan kami."
+          title={lang === "en" ? "Frequently Asked Questions" : "Pertanyaan yang Sering Diajukan"}
+          description={lang === "en" ? "Quick answers to the most common questions from our customers." : "Jawaban cepat untuk pertanyaan yang paling sering ditanyakan oleh pelanggan kami."}
         />
 
         <div className="mx-auto mt-10 max-w-3xl space-y-4">

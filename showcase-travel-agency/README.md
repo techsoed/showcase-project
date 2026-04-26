@@ -1,81 +1,63 @@
-# Showcase Travel Agency Landing Page
+# NusaTransit - Travel Agency Landing Page
 
-Landing page jasa travel antar kota berbasis Next.js App Router + Tailwind CSS, dengan desain modern, profesional, bersih, dan siap deploy ke Vercel.
+NusaTransit adalah sebuah landing page modern, profesional, dan berkinerja tinggi yang dirancang khusus untuk bisnis jasa travel antar kota. Dibangun menggunakan teknologi web terbaru untuk memberikan pengalaman pengguna yang mulus dan premium.
 
-## Jalankan Lokal
+## ✨ Fitur Utama
 
-1. Install dependency:
+- **🚀 Desain Premium & Responsif**: Tampilan elegan dengan nuansa monokrom yang bersih, dioptimalkan untuk perangkat mobile (Android/iOS) dan desktop.
+- **🌐 Dukungan Multi-bahasa (ID/EN)**: Fitur switch bahasa instan antara Bahasa Indonesia dan Bahasa Inggris tanpa reload halaman.
+- **🚗 Hero Section Animasi**: Animasi rotasi armada mobil (Avanza, Innova, Hiace) yang dinamis dan menarik perhatian.
+- **📊 Animated Counter**: Statistik kepercayaan pelanggan yang berhitung otomatis dari 0 saat di-scroll.
+- **📱 Floating WhatsApp Button**: Tombol chat melayang untuk mempermudah konversi pelanggan secara langsung.
+- **🛠️ FAQ Accordion**: Bagian tanya jawab yang interaktif untuk menjawab keraguan pelanggan.
+- **💎 Navbar Premium**: Animasi navbar yang mengecil dan menjadi transparan (glassmorphism) saat di-scroll ke bawah.
 
-	npm install
+## 🛠️ Teknologi yang Digunakan
 
-2. Jalankan mode development:
+- **Next.js 14+ (App Router)** - Framework React untuk performa terbaik.
+- **Tailwind CSS** - Untuk styling yang cepat dan responsif.
+- **TypeScript** - Memastikan kode aman dan mudah dipelihara.
+- **Lucide React / Heroicons** - Set ikon yang konsisten dan modern.
+- **Intersection Observer API** - Untuk memicu animasi saat elemen muncul di layar.
 
-	npm run dev
+## 🚀 Cara Menjalankan Proyek
 
-3. Buka di browser:
+1. **Clone repositori:**
+   ```bash
+   git clone https://github.com/techsoed/showcase-project.git
+   ```
 
-	http://localhost:3000
+2. **Masuk ke direktori:**
+   ```bash
+   cd showcase-travel-agency
+   ```
 
-## Struktur Utama
+3. **Install dependensi:**
+   ```bash
+   npm install
+   ```
 
-- app/: entry layout dan halaman utama
-- components/sections/: komponen per section landing page
-- components/ui/: komponen UI reusable (judul section, ikon)
-- lib/site-config.ts: pusat konfigurasi whitelabel
-- public/fleet/: aset gambar armada
+4. **Jalankan server pengembangan:**
+   ```bash
+   npm run dev
+   ```
+   Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-## Cara Whitelabel (Tanpa Ubah Struktur)
+## 📂 Struktur Folder Utama
 
-Semua konten utama bisa diganti di satu file:
+- `app/`: Routing dan halaman utama Next.js.
+- `components/sections/`: Seluruh bagian layout landing page (Hero, Fleet, Testimonials, dll).
+- `components/ui/`: Komponen kecil yang dapat digunakan kembali (Buttons, AnimatedNumber, Icons).
+- `lib/`: Konfigurasi situs dan data statis (`site-config.ts`).
+- `public/images/`: Aset gambar armada kendaraan.
 
-- Nama brand, kontak, sosial media
-- Warna tema (preset)
-- Headline dan CTA
-- Statistik trust
-- Rute populer
-- Data armada (nama, kapasitas, harga, tag, gambar)
-- Keunggulan layanan
-- Langkah pemesanan
-- Testimoni
+## 📝 Konfigurasi Konten
 
-Edit file berikut:
+Hampir seluruh teks dan data di landing page ini dapat diubah melalui satu file pusat di:
+`lib/site-config.ts`
 
-- lib/site-config.ts
+Anda bisa mengganti nama brand, nomor WhatsApp, rute, harga, hingga testimoni pelanggan di sana.
 
-### Ganti Tema Cepat
+---
 
-Pilih tema aktif melalui key berikut di `siteConfig`:
-
-- activeTheme: "silver" | "steel"
-
-Contoh:
-
-activeTheme: "steel"
-
-Preset warna disimpan di `themePresets`, jadi Anda bisa menambah varian baru tanpa mengubah komponen section.
-
-## Catatan Desain dan Teknis
-
-- Font menggunakan Poppins (next/font/google)
-- Tema default: putih + silver + aksen hitam
-- Mobile-first dan responsive
-- Ukuran teks dasar minimum 16px
-- Tombol dibuat tinggi dan mudah disentuh di mobile
-- Gambar armada menggunakan Next Image untuk optimasi
-- Animasi dibuat ringan dan tidak berlebihan
-
-## Build Produksi
-
-Jalankan build untuk verifikasi:
-
-npm run build
-
-## Deploy ke Vercel
-
-Project ini kompatibel langsung dengan Vercel:
-
-1. Push repository ke Git provider.
-2. Import project di Vercel.
-3. Gunakan setting default Next.js.
-4. Deploy.
-
+Dibuat dengan ❤️ untuk kemajuan bisnis travel Indonesia.

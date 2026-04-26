@@ -4,16 +4,17 @@ import { TestimonialItem } from "@/lib/site-config";
 
 type TestimonialsSectionProps = {
   testimonials: TestimonialItem[];
+  lang?: "id" | "en";
 };
 
-export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
+export function TestimonialsSection({ testimonials, lang = "id" }: TestimonialsSectionProps) {
   return (
     <section id="testimonials" className="border-b border-[var(--border-soft)] bg-[var(--bg-soft)]">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <SectionTitle
-          eyebrow="Testimoni"
-          title="Apa Kata Pelanggan Kami"
-          description="Ulasan singkat dari pelanggan yang sudah menggunakan layanan travel kami."
+          eyebrow={lang === "en" ? "Testimonials" : "Testimoni"}
+          title={lang === "en" ? "What Our Customers Say" : "Apa Kata Pelanggan Kami"}
+          description={lang === "en" ? "Short reviews from customers who have used our travel service." : "Ulasan singkat dari pelanggan yang sudah menggunakan layanan travel kami."}
         />
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

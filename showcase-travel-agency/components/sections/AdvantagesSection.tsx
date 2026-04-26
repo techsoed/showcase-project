@@ -5,6 +5,7 @@ import { AdvantageItem } from "@/lib/site-config";
 
 type AdvantagesSectionProps = {
   items: AdvantageItem[];
+  lang?: "id" | "en";
 };
 
 const iconMap = {
@@ -14,14 +15,14 @@ const iconMap = {
   price: PriceIcon,
 };
 
-export function AdvantagesSection({ items }: AdvantagesSectionProps) {
+export function AdvantagesSection({ items, lang = "id" }: AdvantagesSectionProps) {
   return (
     <section className="border-b border-[var(--border-soft)] bg-white">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <SectionTitle
-          eyebrow="Keunggulan"
-          title="Kenapa Memilih Layanan Kami"
-          description="Fokus pada kenyamanan, keamanan, dan transparansi untuk setiap perjalanan."
+          eyebrow={lang === "en" ? "Advantages" : "Keunggulan"}
+          title={lang === "en" ? "Why Choose Our Service" : "Kenapa Memilih Layanan Kami"}
+          description={lang === "en" ? "Focused on comfort, safety, and transparency for every journey." : "Fokus pada kenyamanan, keamanan, dan transparansi untuk setiap perjalanan."}
         />
 
         <div className="grid gap-4 sm:grid-cols-2">

@@ -43,25 +43,25 @@ export default function Home() {
         <TrustSection stats={siteConfig.trustStats} />
       </ScrollReveal>
       <ScrollReveal delayMs={70}>
-        <RoutesSection routes={siteConfig.popularRoutes} />
+        <RoutesSection routes={siteConfig.popularRoutes} lang={lang} />
       </ScrollReveal>
       <ScrollReveal delayMs={90}>
-        <FleetSection fleet={siteConfig.fleet} />
+        <FleetSection fleet={siteConfig.fleet} lang={lang} />
       </ScrollReveal>
       <ScrollReveal delayMs={110}>
-        <AdvantagesSection items={siteConfig.advantages} />
+        <AdvantagesSection items={siteConfig.advantages} lang={lang} />
       </ScrollReveal>
       <ScrollReveal delayMs={130}>
-        <BookingStepsSection steps={siteConfig.bookingSteps} />
+        <BookingStepsSection steps={siteConfig.bookingSteps} lang={lang} />
       </ScrollReveal>
-      <FaqSection faqs={siteConfig.faqs} />
+      <FaqSection faqs={siteConfig.faqs} lang={lang} />
       <ScrollReveal delayMs={150}>
-        <TestimonialsSection testimonials={siteConfig.testimonials} />
+        <TestimonialsSection testimonials={siteConfig.testimonials} lang={lang} />
       </ScrollReveal>
       <ScrollReveal delayMs={170}>
-        <FinalCtaSection cta={siteConfig.finalCta} brand={siteConfig.brand} />
+        <FinalCtaSection cta={siteConfig.finalCta} brand={siteConfig.brand} lang={lang} />
       </ScrollReveal>
-      <FooterSection brand={siteConfig.brand} />
+      <FooterSection brand={siteConfig.brand} lang={lang} />
       <FloatingWhatsApp brand={siteConfig.brand} />
     </div>
   );

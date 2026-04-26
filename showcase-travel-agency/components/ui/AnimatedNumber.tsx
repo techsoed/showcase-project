@@ -15,7 +15,7 @@ export function AnimatedNumber({ value }: { value: string }) {
           observer.disconnect(); // Only animate once
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
 
     if (elementRef.current) {

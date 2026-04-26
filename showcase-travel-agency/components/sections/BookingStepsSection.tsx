@@ -4,16 +4,17 @@ import { BookingStep } from "@/lib/site-config";
 
 type BookingStepsSectionProps = {
   steps: BookingStep[];
+  lang?: "id" | "en";
 };
 
-export function BookingStepsSection({ steps }: BookingStepsSectionProps) {
+export function BookingStepsSection({ steps, lang = "id" }: BookingStepsSectionProps) {
   return (
     <section className="border-b border-[var(--border-soft)] bg-[var(--bg-main)]">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
         <SectionTitle
-          eyebrow="Cara Pemesanan"
-          title="Pesan Travel Dalam 4 Langkah"
-          description="Alur sederhana agar Anda bisa langsung berangkat tanpa kebingungan."
+          eyebrow={lang === "en" ? "How to Book" : "Cara Pemesanan"}
+          title={lang === "en" ? "Book Travel in 4 Steps" : "Pesan Travel Dalam 4 Langkah"}
+          description={lang === "en" ? "Simple process so you can depart without confusion." : "Alur sederhana agar Anda bisa langsung berangkat tanpa kebingungan."}
         />
 
         <div className="space-y-4">
