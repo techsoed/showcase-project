@@ -1,4 +1,5 @@
 import { BrandConfig } from "@/lib/site-config";
+import { FacebookIcon, InstagramIcon, TiktokIcon } from "@/components/ui/Icons";
 
 type FooterSectionProps = {
   brand: BrandConfig;
@@ -25,17 +26,24 @@ export function FooterSection({ brand, lang = "id" }: FooterSectionProps) {
           <div>
             <p className="text-lg font-semibold text-zinc-900">{lang === "en" ? "Social Media" : "Sosial Media"}</p>
             <div className="mt-3 flex flex-wrap gap-3">
-              {brand.socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-11 items-center rounded-lg border border-zinc-300 bg-white px-4 text-base font-medium text-zinc-800 transition hover:bg-zinc-100"
-                >
-                  {social.label}
-                </a>
-              ))}
+              {brand.socials.map((social) => {
+                let Icon = FacebookIcon;
+                if (social.label.toLowerCase() === "instagram") Icon = InstagramIcon;
+                if (social.label.toLowerCase() === "tiktok") Icon = TiktokIcon;
+
+                return (
+                  <a
+                    key={social.label}
+                    href={social.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 bg-white text-black transition hover:bg-zinc-100"
+                    aria-label={social.label}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
