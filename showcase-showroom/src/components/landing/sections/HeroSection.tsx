@@ -137,18 +137,18 @@ export default function HeroSection({ config, whatsappHref, locale }: LandingSec
           </div>
 
           <div className="mt-2 flex flex-col items-center gap-1">
-            <p className="rounded-full border border-black/20 bg-white/90 px-4 py-1.5 text-sm font-semibold text-black">
+            <p className="rounded-full border border-black/20 bg-white/90 px-3 py-1 text-xs font-semibold text-black sm:text-sm">
               {activeCar.name}
             </p>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 mt-0.5">
               {heroCars.map((car, index) => (
                 <button
                   key={car.image}
                   type="button"
                   aria-label={`Tampilkan ${car.name}`}
                   onClick={() => setActiveIndex(index)}
-                  className={`pressable h-2.5 rounded-full transition-all ${
-                    index === activeIndex ? "w-6 bg-black" : "w-2.5 bg-black/25"
+                  className={`pressable h-1.5 sm:h-2 rounded-full transition-all ${
+                    index === activeIndex ? "w-4 sm:w-5 bg-black" : "w-1.5 sm:w-2 bg-black/25"
                   }`}
                 />
               ))}

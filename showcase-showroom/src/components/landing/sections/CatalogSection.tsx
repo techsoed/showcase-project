@@ -301,13 +301,13 @@ export default function CatalogSection({
                 </div>
               </dl>
 
-              <div className="mt-5 flex flex-col items-start gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-0">
-                <p className="text-2xl sm:text-3xl font-bold">{formatPrice(selectedCar.price)}</p>
-                <div className="text-left sm:text-right mt-1 sm:mt-0">
-                  <p className="text-sm text-black/60 font-medium">
+              <div className="mt-5 flex items-end justify-between gap-2">
+                <p className="text-xl font-bold tracking-tight sm:text-3xl">{formatPrice(selectedCar.price)}</p>
+                <div className="text-right shrink-0">
+                  <p className="text-xs font-medium text-black/60 sm:text-sm">
                     {locale === "id" ? "Estimasi Cicilan" : "Est. Installment"}
                   </p>
-                  <p className="text-base sm:text-lg font-bold text-black/80">
+                  <p className="text-sm font-bold text-black/80 sm:text-lg">
                     {formatPrice(selectedCar.price * 0.025)}/bln
                   </p>
                 </div>
@@ -318,14 +318,14 @@ export default function CatalogSection({
                   href={`${whatsappHref}?text=${encodeURIComponent(`Halo, saya tertarik dengan ${selectedCar.name}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="pressable inline-flex min-h-11 flex-1 items-center justify-center rounded-xl bg-black px-4 text-base font-semibold text-white"
+                  className="pressable inline-flex min-h-11 flex-1 items-center justify-center rounded-xl bg-black px-2 sm:px-4 text-sm sm:text-base font-semibold text-white whitespace-nowrap"
                 >
                   {locale === "id" ? "Chat Sekarang" : "Chat Now"}
                 </a>
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="pressable inline-flex min-h-11 flex-1 items-center justify-center rounded-xl border border-black/20 bg-white px-4 text-base font-semibold"
+                  className="pressable inline-flex min-h-11 flex-1 items-center justify-center rounded-xl border border-black/20 bg-white px-2 sm:px-4 text-sm sm:text-base font-semibold whitespace-nowrap"
                 >
                   {locale === "id" ? "Tutup" : "Close"}
                 </button>
