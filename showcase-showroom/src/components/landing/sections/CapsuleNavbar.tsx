@@ -36,6 +36,7 @@ export default function CapsuleNavbar({
 
   const [activeHref, setActiveHref] = useState<string>("#home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.href.replace("#", ""));
@@ -87,7 +88,7 @@ export default function CapsuleNavbar({
       >
         <a
           href="#home"
-          className="hidden md:flex pressable shrink-0 rounded-full border border-black/15 px-4 py-2 text-sm font-semibold text-black"
+          className="pressable shrink-0 rounded-full border border-black/15 px-4 py-2 text-sm font-semibold text-black"
         >
           {config.brand.name}
         </a>
@@ -113,28 +114,22 @@ export default function CapsuleNavbar({
           })}
         </nav>
 
-        <nav className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1 md:hidden">
-          {navItems.map((item) => {
-            const isActive = activeHref === item.href;
+        <div className="flex md:hidden items-center ml-auto mr-2">
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="pressable p-2 text-black"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            )}
+          </button>
+        </div>
 
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                aria-current={isActive ? "page" : undefined}
-                className={`pressable shrink-0 rounded-full px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive
-                    ? "bg-black text-white"
-                    : "text-black/70 hover:bg-black hover:text-white"
-                }`}
-              >
-                {item.label}
-              </a>
-            );
-          })}
-        </nav>
-
-        <div className="flex shrink-0 items-center gap-2 ml-auto">
+        <div className="hidden md:flex shrink-0 items-center gap-2 ml-auto">
           <button
             type="button"
             onClick={() => onLocaleChange(locale === "id" ? "en" : "id")}
@@ -153,6 +148,45 @@ export default function CapsuleNavbar({
           </a>
         </div>
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="absolute left-4 right-4 top-full mt-2 rounded-2xl border border-black/15 bg-white p-4 shadow-xl md:hidden animate-[fadeIn_200ms_ease-out]">
+          <nav className="flex flex-col gap-2">
+            {navItems.map((item) => {
+              const isActive = activeHref === item.href;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`rounded-xl px-4 py-3 text-sm font-medium transition-all ${
+                    isActive ? "bg-black text-white" : "bg-black/5 text-black hover:bg-black/10"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
+          <div className="mt-4 flex gap-2 border-t border-black/10 pt-4">
+            <button
+              type="button"
+              onClick={() => onLocaleChange(locale === "id" ? "en" : "id")}
+              className="pressable flex-1 rounded-xl border border-black/20 py-3 text-sm font-semibold text-black"
+            >
+              {locale === "id" ? "Switch to English" : "Ubah ke Indonesia"}
+            </button>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              className="pressable flex-1 rounded-xl bg-black py-3 text-center text-sm font-semibold text-white"
+            >
+              {locale === "id" ? "Chat WA" : "Chat WA"}
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

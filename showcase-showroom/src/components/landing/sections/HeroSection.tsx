@@ -82,9 +82,6 @@ export default function HeroSection({ config, whatsappHref, locale }: LandingSec
     <section id="home" className="relative overflow-hidden bg-white px-4 pb-14 pt-2 sm:px-6 lg:px-8 lg:pb-20 lg:pt-4">
       <div className="mx-auto flex w-full max-w-6xl flex-col-reverse gap-8 py-0 md:py-2 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl animate-[fadeIn_700ms_ease-out]">
-          <p className="mb-1.5 inline-flex rounded-full border border-black/10 bg-[var(--wl-silver)] px-3 py-1 text-base font-semibold">
-            {config.brand.name}
-          </p>
           <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
             {heroCopy.headline}
           </h1>
