@@ -301,13 +301,13 @@ export default function CatalogSection({
                 </div>
               </dl>
 
-              <div className="mt-5 flex items-end justify-between">
-                <p className="text-3xl font-bold">{formatPrice(selectedCar.price)}</p>
-                <div className="text-right">
+              <div className="mt-5 flex flex-col items-start gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-0">
+                <p className="text-2xl sm:text-3xl font-bold">{formatPrice(selectedCar.price)}</p>
+                <div className="text-left sm:text-right mt-1 sm:mt-0">
                   <p className="text-sm text-black/60 font-medium">
                     {locale === "id" ? "Estimasi Cicilan" : "Est. Installment"}
                   </p>
-                  <p className="text-lg font-bold text-black/80">
+                  <p className="text-base sm:text-lg font-bold text-black/80">
                     {formatPrice(selectedCar.price * 0.025)}/bln
                   </p>
                 </div>

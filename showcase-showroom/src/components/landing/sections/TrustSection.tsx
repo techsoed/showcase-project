@@ -45,26 +45,26 @@ export default function TrustSection({ config, locale }: Props) {
         <RevealOnScroll>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
         </RevealOnScroll>
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((item, index) => {
             const Icon = trustIcons[index % trustIcons.length];
 
             return (
               <RevealOnScroll key={item.label} delayMs={index * 100} className="h-full">
                 <article
-                  className="flex h-full flex-col rounded-2xl border border-black/10 bg-black/5 p-4 shadow-sm sm:p-5"
+                  className="flex h-full flex-col rounded-2xl border border-black/10 bg-black/5 p-5 shadow-sm"
                 >
-                <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[var(--wl-black)] sm:mb-4 sm:h-10 sm:w-10">
-                  <Icon size={18} strokeWidth={2.1} />
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--wl-black)]">
+                  <Icon size={20} strokeWidth={2.1} />
                 </div>
-                <CountUp value={item.value} className="text-2xl font-bold sm:text-3xl" />
-                <p className="mt-1 text-sm text-black/70 sm:text-base">{item.label}</p>
+                <CountUp value={item.value} className="text-3xl font-bold" />
+                <p className="mt-1 text-base text-black/70">{item.label}</p>
                 </article>
               </RevealOnScroll>
             );
           })}
         </div>
-        <div className="mt-3 grid gap-2 sm:grid-cols-3 sm:gap-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
           {claims.map((claim, index) => {
             const Icon = claimIcons[index % claimIcons.length];
 
